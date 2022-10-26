@@ -1,0 +1,58 @@
+# Simple install (Not the best..)
+- hosts: docker
+  become: true
+  tasks:
+  - name: 'installing curl and updating apt'
+    apt: 
+      name: curl
+      state: latest
+      update_cache: true
+
+  - name: 'install docker via shell'
+    shell:
+      cmd: curl https://get.docker.com | sudo bash
+
+# Module install (more complex but better)
+- hosts: docker
+  become: true
+  tasks: 
+
+  - name: 'Install aptitude'
+    apt: 
+      name: aptitude
+      state: latest
+      update_cache: true
+      
+  - name: 'Install required packages'
+    apt: 
+      pkg:
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - software-properties-common
+        - python3-pip
+        - virtualenv
+        - python3-setuptools
+      state: latest
+      update_cache: true
+
+  - name: 'Add docker GPG apt key'
+    apt_key: 
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+
+  - name: 'Add Docker Repository'
+    apt_repository: 
+      repo: deb https://download.docker.com/linux/ubuntu focal stable
+      state: present
+
+  - name: 'Update apt and install docker -ce'
+    apt: 
+      name: docker-ce
+      state: latest
+      update_cache: true
+
+  - name: 'Install docker module for python'
+    pip:
+      name: docker
+

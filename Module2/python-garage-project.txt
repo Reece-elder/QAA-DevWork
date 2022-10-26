@@ -1,0 +1,38 @@
+Python Garage Project
+
+You are in charge of running a garage which fixes a variety of vehicles.
+Your garage object will contain a list of Vehicles 
+Your garage should be able to do the following things: 
+- List all vehicles in the garage
+- Remove a vehicle from the garage
+- Add a vehicle to the garage 
+- Replace a vehicle in the garage
+- Quoting the cost of a fixVehicle on a specific vehicle, returning the total and leaving the vehicle
+- Run the fixVehicle function on a specific vehicle, returning the total and removing the vehicle
+- Run fixVehicle on all vehicles in the garage, returning the cost per vehicle, total cost and removing all vehicles
+
+You should have 3 distinct type of child vehicle objects all with the vehicle parent object (Vehicle -> car, boat, truck)
+Each of the 3 distinct child vehicle types should have atleast 3 unique attributes and inherit 2 attributes from the vehicle parent
+The parent object should have an abstract method called fixVehicle() which will be passed down to the child objects
+
+fixVehicle should use the attributes of the object to calculate a fixing cost using if statements, loops and other functions. 
+This could look like: Car(doors = 5, convertible = True, type = bmw, condition = B)
+
+def fixVehicle(self):
+  cost = 100
+  if condition == "A":
+    cost = cost * 1.2
+  elif condition == "B":
+    cost = cost * 1.5
+
+  cost = cost + (doors * 20)
+  
+  return cost
+
+The function should use ALL attributes from the object, both unique and inherited
+
+You should create Garage as an object with these functions, and run the garage functions from a different file importing in the functions you need
+
+Stretch goal - Test your code using pytest and add the following functions:
+- Fix all vehicles of one type (boat, car, etc.)
+- Remove all vehicles of one type

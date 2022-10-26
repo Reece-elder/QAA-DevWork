@@ -1,0 +1,6 @@
+fruitName,fruitColour,rating
+orange,orange,7
+kiwi,green,9
+mango,yellow,8
+melon,green,5
+tomato,red,6

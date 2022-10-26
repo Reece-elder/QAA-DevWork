@@ -1,0 +1,21 @@
+# Pizza Data
+pizzas:
+  - hawaiian:
+    type: Hawaiian
+    size: 14
+    stuffedCrust: true
+    toppings: 
+    - Ham
+    - Pineapple
+    - Mozzarella
+
+  - fourCheese:
+    type: "4 Cheese Pizza"
+    size: 13
+    stuffedCrust: false
+    toppings: 
+    - Mozzerella
+    - Goat Cheese
+    - Gorgonzola
+    - Parmesan
+
