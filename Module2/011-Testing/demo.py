@@ -3,6 +3,9 @@
 # Pytest used as our testing platform
 # pip install pytest
 
+# When testing files ensure the file is called test_filename.py 
+# for pytest to read - `pytest test_filename.py`
+
 # Basic Test
 def func(num):
     return num * 2
